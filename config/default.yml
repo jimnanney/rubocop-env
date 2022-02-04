@@ -1,0 +1,9 @@
+Env/Assign:
+  Include: &1
+    - "**/*_spec.rb"
+  Exclude:
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - spec/support/**/*.rb
+  Description: 'Env/Assign prevents assigning to ENV in rspec tests.'
+  Enabled: true
