@@ -1,8 +1,6 @@
-# Rubocop::Env
+# RuboCop Env
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop/env`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+RuboCop cop used to prevent direct assignment to ENV in rspec tests.
 
 ## Installation
 
@@ -22,7 +20,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In order to use this you'll need to tell Rubocop to load this extension. You can do it in one of three ways.
+
+### RuboCop
+
+Add the following to your `.rubocop.yml`
+
+```yaml
+require: rubocop-env
+```
+Requiring like this will automatically load the rubocop-env cops with the regular RoboCop cops.
+
+### Command line
+
+```
+rubocop --require rubocop-env
+```
+
+### Rake task
+
+```ruby
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-env'
+end
+```
 
 ## Development
 

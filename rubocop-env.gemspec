@@ -14,8 +14,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = '>= 2.5'
 
-  spec.metadata['allowed_push_host'] = 'https://mygemserver.com'
-
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/main/CHANGELOG.md"
@@ -37,4 +35,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'rubocop'
   spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rspec', '>=3.4'
+  spec.add_development_dependency 'rake'
 end
