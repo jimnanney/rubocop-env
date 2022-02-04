@@ -53,9 +53,8 @@ PLATFORMS
 
 DEPENDENCIES
   pry
-  rake (~> 13.0)
-  rspec (~> 3.0)
-  rubocop (~> 1.7)
+  rake
+  rspec (>= 3.4)
   rubocop-env!
 
 BUNDLED WITH
