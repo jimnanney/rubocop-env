@@ -1,8 +1,10 @@
 # frozen_string_literal: true
+
 require 'yaml'
-require_relative "env/version"
+require_relative 'env/version'
 
 module RuboCop
+  # Rubocop Cop for checking ENV
   module Env
     class Error < StandardError; end
     PROJECT_ROOT   = Pathname.new(__dir__).parent.parent.expand_path.freeze
@@ -12,4 +14,3 @@ module RuboCop
     private_constant(:CONFIG_DEFAULT, :PROJECT_ROOT)
   end
 end
-

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
-require 'pry'
 
 module RuboCop
   module Cop
     module Env
+      # Rubocop Cop for Checking ENV
       # Checks for any assignments to the ENV in tests.
       #
       # When assigning to ENV you assign to a global state. This can affect other tests when you
