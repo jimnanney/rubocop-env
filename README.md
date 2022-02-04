@@ -2,6 +2,25 @@
 
 RuboCop cop used to prevent direct assignment to ENV in rspec tests.
 
+### Env/Assign
+
+Checks for any assignments to the ENV in tests.
+
+When assigning to ENV you assign to a global state. This can affect other tests when you
+do not reassign the original value back to the ENV. This also can affect other tests when
+you are running tests in separate threads. This can lead to flaky and hard to find bugs in
+your test suite. It is much safer to mock the return value of the index getter to return
+the correct value.
+
+```ruby
+ # bad
+ ENV["OPTS"] = "testopts"
+
+ # good
+ allow(ENV).to receive(:[]).and_call_original
+ allow(ENV).to receive(:[]).with("OPTS").and_return("testopts")
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
